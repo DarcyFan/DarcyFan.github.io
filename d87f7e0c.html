@@ -16,21 +16,24 @@
   <meta name="author" content="DarcyFan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="None">
+    <meta name="description" content="介于自己在近期心血来潮搭建了自己的个人博客，遂将过程记录于此，以便自己随时回顾，也方便他人借鉴，因个人技术有限，如有错误，欢迎提出，望海涵。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何使用Hexo + GithubPages搭建一个个人博客">
+<meta property="og:title" content="如何使用Hexo + GithubPages搭建个人博客">
 <meta property="og:url" content="http://darcyfan.github.io/d87f7e0c.html">
 <meta property="og:site_name" content="DarcyFan的个人博客">
-<meta property="og:description" content="None">
+<meta property="og:description" content="介于自己在近期心血来潮搭建了自己的个人博客，遂将过程记录于此，以便自己随时回顾，也方便他人借鉴，因个人技术有限，如有错误，欢迎提出，望海涵。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/image-20230330173446772.png">
+<meta property="og:image" content="https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/image-20230330194023343.png">
 <meta property="article:published_time" content="2023-03-29T12:21:35.000Z">
-<meta property="article:modified_time" content="2023-03-29T13:31:56.181Z">
+<meta property="article:modified_time" content="2023-03-30T12:20:01.559Z">
 <meta property="article:author" content="DarcyFan">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/image-20230330173446772.png">
   
   
   
-  <title>如何使用Hexo + GithubPages搭建一个个人博客 - DarcyFan的个人博客</title>
+  <title>如何使用Hexo + GithubPages搭建个人博客 - DarcyFan的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,13 +197,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://i.328888.xyz/2023/03/29/ikgEsC.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/铃芽之旅.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="如何使用Hexo + GithubPages搭建一个个人博客"></span>
+            <span id="subtitle" data-typed-text="如何使用Hexo + GithubPages搭建个人博客"></span>
           
         </div>
 
@@ -228,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          73 字
+          1.7k 字
         
       </span>
     
@@ -239,7 +242,7 @@
         
         
         
-          1 分钟
+          18 分钟
         
       </span>
     
@@ -277,12 +280,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">如何使用Hexo + GithubPages搭建一个个人博客</h1>
+            <h1 style="display: none">如何使用Hexo + GithubPages搭建个人博客</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年3月29日 晚上
+                    本文最后更新于：2023年3月30日 晚上
                   
                 
               </p>
@@ -290,12 +293,67 @@
             
               <div class="markdown-body">
                 
-                <script type="math/tex; mode=display">
-sf(x) = \frac{x^2}{x+y}</script><script type="math/tex; mode=display">
-xf(x) = \frac{x^2}{x+y}</script><p>4444</p>
-<script type="math/tex; mode=display">
-xf(x) = \frac{x^2}{x+y}</script><script type="math/tex; mode=display">
-E = mc^2</script>
+                <h2 align='center'>
+    Hexo + GithubPages搭建个人博客
+</h2>
+
+
+<h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h3><h4 id="1-1-Node-js"><a href="#1-1-Node-js" class="headerlink" title="1.1 Node.js"></a>1.1 Node.js</h4><ul>
+<li>Node.js 是一套JavaScript的运行环境，它使得JavaScript不再依赖于浏览器，可以像其他编程语言一样直接在计算机上使用</li>
+<li>Node.js 可帮助我们搭建博客，实现博客的结构化管理，例如，在下列步骤安装hexo时需要使用到Node.js的包管理工具npm</li>
+<li>Node.js 安装步骤网上有很多资源，在此不再赘述，这里提供官网链接：<a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js</a></li>
+</ul>
+<h4 id="1-2-Git"><a href="#1-2-Git" class="headerlink" title="1.2 Git"></a>1.2 Git</h4><ul>
+<li>git 是一款强大的版本控制系统，也帮助了我们来对个人博客的各种文件进行备份，git官网：<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>  </li>
+<li>可以使用git —version查看git是否安装成功</li>
+</ul>
+<h4 id="1-3-注册-github-账号"><a href="#1-3-注册-github-账号" class="headerlink" title="1.3 注册 github 账号"></a>1.3 注册 github 账号</h4><ul>
+<li>注册一个github账号，帮助我们的个人博客不仅仅局限于本地</li>
+</ul>
+<h3 id="2-搭建博客"><a href="#2-搭建博客" class="headerlink" title="2. 搭建博客"></a>2. 搭建博客</h3><h4 id="2-1-Hexo-安装及本地生成博客"><a href="#2-1-Hexo-安装及本地生成博客" class="headerlink" title="2.1 Hexo 安装及本地生成博客"></a>2.1 Hexo 安装及本地生成博客</h4><ul>
+<li>Hexo 是一个快速、简介、高效的博客框架（ 官网这么写的 :) ），可用于生成静态网页，安装Hexo之前，请务必已经安装好Node.js 及 Git</li>
+<li>使用npm对Hexo进行安装（npm已经随同Node.js下载好）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># -g 表示全局安装,不会在项目node_modules目录中保存模块包</span><br>npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+<ul>
+<li>安装好Hexo后，新建一个存放博客的文件夹，并进入该文件夹进行如下操作</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#在新建的博客文件夹下使用Hexo初始化目录</span><br>hexo init<br><span class="hljs-comment">#开启本地服务</span><br>hexo s<br></code></pre></td></tr></table></figure>
+<p>​    可以看到初始化后的博客目录如下，开启本地服务后，也可打开网址 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 查看生成的本地网页</p>
+<p><img src="https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/image-20230330173446772.png" srcset="/img/loading.gif" lazyload width = 700></p>
+<ul>
+<li><ul>
+<li>其中，_config.yml 是配置文件，可在此配置相关参数</li>
+<li>package.json 是应用程序和相关包的信息</li>
+<li>scaffolds 是模板文件夹，新建文章，网页时，将按照此文件夹下的相关文件进行生成</li>
+<li>source 是资源文件夹，我们写的博客文章，网页等信息都将包含在这个文件夹下</li>
+<li>themes是主题文件夹，可在此保存主题</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-博客部署"><a href="#2-2-博客部署" class="headerlink" title="2.2 博客部署"></a>2.2 博客部署</h4><ul>
+<li>首先需要安装 hexo-deployer-git 插件，这样才能依赖于git将我们的博客部署到Github repository中</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># --save 表示将模块安装到node_modules下，并且在package文件的dependencies节点中写入</span><br>npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+<ul>
+<li>安装完上述模块后，接下来就到了发挥github的作用了，去github新建一个repository，repository name必须采用如下格式 { your github name }.github.io，如果不采用这个格式，就没法在网址上找到自己的个人博客了,且将该repository的权限设置为public</li>
+<li>创建完repository后，复制好该repository的https（好像SSH也可以），如下图所示:</li>
+</ul>
+<p><img src='https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/image-20230330194023343.png' width=700></p>
+<ul>
+<li>打开站点的配置文件（即_config.yml），找到deploy节点，进行如下修改：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br>	<span class="hljs-built_in">type</span>: git<br>	<span class="hljs-comment">#本地文件上传至该repository中</span><br>	repo: 将你自己的repository的 https 或 SSH 粘贴在这<br>	<span class="hljs-comment">#之后的部署会将public中的资源保存在repository的master分支中</span><br>	branch:master <br></code></pre></td></tr></table></figure>
+<ul>
+<li>打开git bash，将当前目录修改为个人博客的目录，并设置git的用户名和邮箱，建议与github的用户名和邮箱保持一致<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name 你的用户名<br>git config --global user.email 你的邮箱<br></code></pre></td></tr></table></figure></li>
+<li><p>可以创建SSH key，这样可以在本地文件上传到github中时，不必再每次输入github的密码，网上有很多帖子说这个，我就不在此赘述了</p>
+</li>
+<li><p>运行如下命令</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#清除本地缓存，即删除public文件夹，这个文件夹是基于本地的文件生成的、用于上传到仓库或者其他网站服务器#上的文件夹</span><br>hexo clean<br><span class="hljs-comment">#再次生成public文件夹</span><br>hexo g<br><span class="hljs-comment">#部署到github上</span><br>hexo d<br></code></pre></td></tr></table></figure>
+<p>​    就可以使用{your github username}.github.io来访问自己的博客了!</p>
+
                 
               </div>
             
@@ -312,7 +370,7 @@ E = mc^2</script>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>如何使用Hexo + GithubPages搭建一个个人博客</div>
+      <div>如何使用Hexo + GithubPages搭建个人博客</div>
       <div>http://darcyfan.github.io/d87f7e0c.html</div>
     </div>
     <div class="license-meta">
@@ -360,12 +418,6 @@ E = mc^2</script>
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/4a17b156.html" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
