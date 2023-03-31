@@ -23,13 +23,13 @@
 <meta property="og:site_name" content="DarcyFan的个人博客">
 <meta property="og:description" content="介于自己在近期心血来潮搭建了自己的个人博客，遂将过程记录于此，以便自己随时回顾，也方便他人借鉴，因个人技术有限，如有错误，欢迎提出，望海涵。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="d:/Blog/myblog/source/img/How2BuildBlog/image-20230330173446772.png">
-<meta property="og:image" content="d:/Blog/myblog/source/img/How2BuildBlog/image-20230330194023343.png">
+<meta property="og:image" content="http://darcyfan.github.io/img/How2BuildBlog/image-20230330173446772.png">
+<meta property="og:image" content="http://darcyfan.github.io/img/How2BuildBlog/image-20230330194023343.png">
 <meta property="article:published_time" content="2023-03-29T12:21:35.000Z">
-<meta property="article:modified_time" content="2023-03-31T06:12:09.813Z">
+<meta property="article:modified_time" content="2023-03-31T06:41:28.175Z">
 <meta property="article:author" content="DarcyFan">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="d:/Blog/myblog/source/img/How2BuildBlog/image-20230330173446772.png">
+<meta name="twitter:image" content="http://darcyfan.github.io/img/How2BuildBlog/image-20230330173446772.png">
   
   
   
@@ -197,7 +197,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://tuchuang-1317543556.cos.ap-beijing.myqcloud.com/typora/铃芽之旅.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -320,7 +320,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#在新建的博客文件夹下使用Hexo初始化目录</span><br>hexo init<br><span class="hljs-comment">#开启本地服务</span><br>hexo s<br></code></pre></td></tr></table></figure>
 <p>​    可以看到初始化后的博客目录如下，开启本地服务后，也可打开网址 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 查看生成的本地网页</p>
-<p><img src="D:/Blog/myblog/source/img/How2BuildBlog/image-20230330173446772.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="../img/How2BuildBlog/image-20230330173446772.png" srcset="/img/loading.gif" lazyload alt="Hexo 初始化目录"></p>
 <ul>
 <li><ul>
 <li>其中，_config.yml 是配置文件，可在此配置相关参数</li>
@@ -339,7 +339,7 @@
 <li>安装完上述模块后，接下来就到了发挥github的作用了，去github新建一个repository，repository name必须采用如下格式 { your github name }.github.io，如果不采用这个格式，就没法在网址上找到自己的个人博客了,且将该repository的权限设置为public</li>
 <li>创建完repository后，复制好该repository的https（好像SSH也可以），如下图所示:</li>
 </ul>
-<p><img src="D:/Blog/myblog/source/img/How2BuildBlog/image-20230330194023343.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="../img/How2BuildBlog/image-20230330194023343.png" srcset="/img/loading.gif" lazyload alt="HTTPS"></p>
 <ul>
 <li>打开站点的配置文件（即_config.yml），找到deploy节点，进行如下修改：</li>
 </ul>
