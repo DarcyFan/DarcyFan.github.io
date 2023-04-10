@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://darcyfan.github.io/img/How2BuildBlog/image-20230330173446772.png">
 <meta property="og:image" content="http://darcyfan.github.io/img/How2BuildBlog/image-20230330194023343.png">
 <meta property="article:published_time" content="2023-03-29T12:21:35.000Z">
-<meta property="article:modified_time" content="2023-04-09T12:36:09.888Z">
+<meta property="article:modified_time" content="2023-04-10T11:16:26.511Z">
 <meta property="article:author" content="DarcyFan">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://darcyfan.github.io/img/How2BuildBlog/image-20230330173446772.png">
@@ -291,7 +291,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年4月9日 晚上
+                    本文最后更新于：2023年4月10日 晚上
                   
                 
               </p>
@@ -351,7 +351,10 @@
 </ul>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br>	<span class="hljs-built_in">type</span>: git<br>	<span class="hljs-comment">#本地文件上传至该repository中</span><br>	repo: 将你自己的repository的 https 或 SSH 粘贴在这<br>	<span class="hljs-comment">#之后的部署会将public中的资源保存在repository的master分支中</span><br>	branch:master <br></code></pre></td></tr></tbody></table></figure>
 <ul>
-<li>打开git bash，将当前目录修改为个人博客的目录，并设置git的用户名和邮箱，建议与github的用户名和邮箱保持一致<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name 你的用户名<br>git config --global user.email 你的邮箱<br></code></pre></td></tr></tbody></table></figure></li>
+<li>打开git bash，将当前目录修改为个人博客的目录，并设置git的用户名和邮箱，建议与github的用户名和邮箱保持一致  </li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name 你的用户名<br>git config --global user.email 你的邮箱<br></code></pre></td></tr></tbody></table></figure>
+<ul>
 <li><p>可以创建SSH key，这样可以在本地文件上传到github中时，不必再每次输入github的密码，网上有很多帖子说这个，我就不在此赘述了</p>
 </li>
 <li><p>运行如下命令</p>
@@ -394,6 +397,37 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-api-sand.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -492,7 +526,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>DarcyFan</span></a> <i class="iconfont icon-twitch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>YYF1154123465@163.com</span></a> 
+       <span>DarcyFan</span> <i class="iconfont icon-twitch-fill"></i> <span>YYF1154123465@163.com</span> 
     </div>
   
   
@@ -686,10 +720,6 @@
   <script  src="/js/local-search.js" ></script>
 
 
-
-
-  
-<script src="/js/canvas-ribbon.js"></script>
 
 
 

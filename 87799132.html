@@ -555,6 +555,37 @@ P_h' = MP_w =
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-api-sand.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -653,7 +684,7 @@ P_h' = MP_w =
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>DarcyFan</span></a> <i class="iconfont icon-twitch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>YYF1154123465@163.com</span></a> 
+       <span>DarcyFan</span> <i class="iconfont icon-twitch-fill"></i> <span>YYF1154123465@163.com</span> 
     </div>
   
   
@@ -847,10 +878,6 @@ P_h' = MP_w =
   <script  src="/js/local-search.js" ></script>
 
 
-
-
-  
-<script src="/js/canvas-ribbon.js"></script>
 
 
 
