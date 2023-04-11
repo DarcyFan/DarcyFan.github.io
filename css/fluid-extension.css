@@ -25,6 +25,7 @@
     background-color: rgba(0, 120, 231, .9)
 }
 
+
 /*
 Mac 样式代码框
 */
@@ -45,6 +46,16 @@ figure.highlight::before {
     margin-top: -20px;
     position: absolute;
     width: 12px;
+}
+
+/*
+index_img 图片微动画
+*/
+.index-img {
+    transition: .3s;           /*动画时间*/
+}
+.index-card:hover .index-img {
+    transform: scale(1.05);    /*放大倍数*/
 }
 
 /*

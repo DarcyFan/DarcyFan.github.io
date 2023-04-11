@@ -8,7 +8,7 @@ function createtime() {
     mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
     seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
     snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-    document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
-    document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 " + snum + " 秒 ";
+    document.getElementById("timeDate").innerHTML = "🚀 for "+dnum+" days ";
+    document.getElementById("times").innerHTML = hnum + " hr " + mnum + " min " + snum + " sec ";
 }
 setInterval("createtime()",250);

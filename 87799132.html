@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@master/Theme_img/avatar.png">
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@master/Theme_img/avatar.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s2.loli.net/2023/04/11/xwWYvGO3dhPUtVZ.jpg">
+  <link rel="icon" href="https://s2.loli.net/2023/04/11/xwWYvGO3dhPUtVZ.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -24,13 +24,13 @@
 <meta property="og:description" content="最近在使用open3d从depth map转点云时接触到了相机内外参的相关内容，但是查阅许久之后感觉查到的对于相机内外参的转换都说的不够明朗，于是决定自己写一篇摄像几何的相关内容来记录一下，这篇博客将包含某个点从世界坐标系，到摄像机坐标系，再到成像平面坐标系，最后到像素坐标系的转换，同时也包含了相机内外参的相关内容~">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image1.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image2.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image3.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image4.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image5.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/11/nQVIr4SZkLXpmib.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/11/m72ub4XLiC5ZdqI.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/11/EN5nkJ3YMWR1Pyp.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/11/TtA1HlW94bSp6NF.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/11/rT2QvMNnxP5gh4D.png">
 <meta property="article:published_time" content="2023-04-09T12:28:44.000Z">
-<meta property="article:modified_time" content="2023-04-11T08:30:17.755Z">
+<meta property="article:modified_time" content="2023-04-11T10:36:43.783Z">
 <meta property="article:author" content="DarcyFan">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">
@@ -73,6 +73,7 @@
 
   
 <link rel="stylesheet" href="/css/fluid-extension.css">
+<link rel="stylesheet" href="/css/twikoo.css">
 
 
 
@@ -295,7 +296,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年4月11日 下午
+                    本文最后更新于：2023年4月11日 晚上
                   
                 
               </p>
@@ -314,10 +315,10 @@
 <li>成像坐标系：成像平面则是指物体通过摄像机成像后，该图像所在的平面，该平面以米为单位。该平面原点通常在摄像机坐标系的 $Z$ 轴上，且和相机光圈的距离是焦距 $f$ ，其 $X$ 和 $Y$ 轴平行于摄像机坐标的 $X$ 和 $Y$ 轴</li>
 <li>像素坐标系：该平面以像素为单位，说白了就是一个单独的坐标系，该坐标系可以从成像坐标系将单位转换为像素后获得，至于为什么要转换呢？我们在计算机上看到的图片是以像素为单位的，而成像平面是以米为单位的，转换后当然是方便做计算。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image1.png" srcset="/img/loading.gif" lazyload width="700"></p>
+<p><img src="https://s2.loli.net/2023/04/11/nQVIr4SZkLXpmib.png" srcset="/img/loading.gif" lazyload width="700"></p>
 <h4 id="2-摄像机坐标系-到-成像平面坐标系的转换"><a href="#2-摄像机坐标系-到-成像平面坐标系的转换" class="headerlink" title="2. 摄像机坐标系 到 成像平面坐标系的转换"></a>2. 摄像机坐标系 到 成像平面坐标系的转换</h4><p>如上图所示，在摄像机坐标系下，我们将 $P(x,y,z)$ 经过成像原理投影到了成像平面上的 $P’(x’,y’)$ ,假设我们已知 $P$ 点坐标，我们现在想将 $P’$ 的坐标用 $x$　和 $y$ 表示出来。  </p>
 <p>我们从摄像机坐标系 $i$ 轴方向看，可以看到 $P$ 和 $P’$ 的位置如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image2.png" srcset="/img/loading.gif" lazyload width="700"></p>
+<p><img src="https://s2.loli.net/2023/04/11/m72ub4XLiC5ZdqI.png" srcset="/img/loading.gif" lazyload width="700"></p>
 <p>其中 $f$ 即为相机焦距，$f$ 与相机有关，属于已知条件，根据相似三角形原理，可以得出以下关系：$y’=f\frac{y}{z}$ , 同理，从 $j$ 轴方向看，可得：$x’=f\frac{x}{z}$   </p>
 <p>那么 $P$ 到 $P’$ （这里的 $P’$ 表示成像平面坐标空间）的映射如下</p>
 <script type="math/tex; mode=display">
@@ -344,7 +345,7 @@ P'=
     f\frac{y}{z}
 \end{matrix}
 \right]</script><h4 id="3-成像平面坐标系-到-像素坐标系的转换"><a href="#3-成像平面坐标系-到-像素坐标系的转换" class="headerlink" title="3.成像平面坐标系 到 像素坐标系的转换"></a>3.成像平面坐标系 到 像素坐标系的转换</h4><h5 id="3-1-偏置"><a href="#3-1-偏置" class="headerlink" title="3.1 偏置"></a>3.1 偏置</h5><p>现在，我们已经将摄像机坐标系下的三维空间点映射到了二维成像平面上，但二维成像平面的单位是米，我们用于计算时并不方便，因此我们需要将二维成像平面坐标系上的点，再次映射到以像素为单位的像素平面坐标系上。  </p>
-<p><img src="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image3.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://s2.loli.net/2023/04/11/EN5nkJ3YMWR1Pyp.png" srcset="/img/loading.gif" lazyload></p>
 <p>如上图所示，像素平面坐标系 $XY$ 的原点位于左下角，假设成像平面坐标系 $X^cY^c$ 的原点在像素平面坐标系上的坐标为 $(C_x,C_y)$ ，那么位于成像平面坐标系上的点 $(f\frac{x}{z},f\frac{y}{z})$ 映射到像素平面坐标系上时，其坐标为 $(f\frac{x}{z}+C_x,f\frac{y}{z}+C_y)$ ，这样就完成了吗？当然不是。  </p>
 <h5 id="3-2-单位转换"><a href="#3-2-单位转换" class="headerlink" title="3.2 单位转换"></a>3.2 单位转换</h5><p>我们知道，不论是$f$，$x$ ，$y$ 还是 $z$ ，他们的单位都是米，而这里的$C_x$ 和 $C_y$ 的单位都是像素，肯定是不能直接使用加法操作将两者加到一起的，所以在加法操作之前，需要有一个单位转换的操作。</p>
 <p>这里我们引入参数 $k$ 和 $l$ ，他们的单位是 $pixel/m$ ,他们代表的含义分别是在成像平面坐标系的 $x$ 和 $y$ 轴上，一米对应多少个像素宽度，这两个参数大小与相机的成像元器件有关，显然，值越大，越清晰，那么我们将 $k$ 和 $l$ 加入公式中，将 $f\frac{z}{z}$ 和 $f\frac{y}{z}$ 分别乘上 $k$ 和 $l$ ，就把单位从米转换到像素了。到目前为止，三维空间坐标转换到二维像素坐标表达如下：</p>
@@ -422,7 +423,7 @@ P_h'=
 \right]
 =MP_h</script><p>其中$P_h’$ 表示像素平面坐标对应的齐次空间下的坐标，而矩阵$ \left[\begin{smallmatrix}x \\ y \\ z \\ 1\end{smallmatrix}\right] $ 又是我们三维空间坐标$(x,y,z)$ 对应的齐次坐标$P_h$，矩阵$\left[\begin{smallmatrix}\alpha &amp; 0 &amp; C_x &amp; 0 \\ 0 &amp; \beta &amp; C_y &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0\end{smallmatrix}\right]$ (记为$M$)是固定不变的，因此在欧式空间下三维到二维的非线性变换 $(x,y,z)$ $\to$ $(x’,y’)=(\alpha\frac{x}{z}+C_x,\beta\frac{y}{z}+C_y)$ ，在齐次空间下，欧氏空间中的三维空间点到二维空间点有了线性变换$P_h’=MP_h$</p>
 <h4 id="6-摄像机内参矩阵"><a href="#6-摄像机内参矩阵" class="headerlink" title="6.摄像机内参矩阵"></a>6.摄像机内参矩阵</h4><p>而出于制造工艺的误差，有时候在欧氏空间下，我们的成像平面到像素平面的转换过程中，我们像素平面的像素不一定是直角方形的，可能是平行四边形的,假设两条边之间的夹角为 $\theta$ ，如下图所示    </p>
-<p><img src="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image4.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://s2.loli.net/2023/04/11/TtA1HlW94bSp6NF.png" srcset="/img/loading.gif" lazyload></p>
 <p>那么我们在齐次空间下坐标的变换修改成如下格式</p>
 <script type="math/tex; mode=display">
 P_h'=
@@ -499,7 +500,7 @@ P_w=K
     R & T
 \end{matrix}
 \right]P_w=MP_w</script><p>其中，我们称 $\left[\begin{smallmatrix}R &amp; T\end{smallmatrix}\right]$ 为摄像机的外参矩阵，$K$ 为摄像机内参矩阵，$M$ 称为投影矩阵，再附上一张总结图如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/DarcyFan/imgbed@main/Post_img/PhotographicGeometry/image5.png" srcset="/img/loading.gif" lazyload width="700"></p>
+<p><img src="https://s2.loli.net/2023/04/11/rT2QvMNnxP5gh4D.png" srcset="/img/loading.gif" lazyload width="700"></p>
 <p>那么以上一连串的表达均是在齐次坐标系下完成，那么我们如何将 $P_h’$ 在欧式空间中表达呢？  我们只需要将最终的齐次矩阵 $MP_w$ 表达为欧氏空间下的矩阵即可，表达如下：</p>
 <script type="math/tex; mode=display">
 P_h' = MP_w = 
